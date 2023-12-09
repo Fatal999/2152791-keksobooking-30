@@ -3,6 +3,7 @@
   "version": "29.0.0",
   "private": true,
   "description": "Личный проект «Кексобукинг» от HTML Academy",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git@github.com:htmlacademy-javascript/2152791-keksobooking-30.git"
