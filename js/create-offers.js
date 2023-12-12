@@ -19,7 +19,7 @@ let titlesArray = ['Ocean View Retreat', 'City Lights Suite', 'Rustic Mountain C
 let typeArray = ['Palace', 'Flat', 'House', 'Bungalow', 'Hotel'];
 let timeArray = ['12:00', '13:00', '14:00'];
 let featuresArray = ['Wi-fi', 'Dishwasher', 'Parking', 'Washer', 'Elevator', 'Conditioner'];
-let descriptionArray = ['Coastal charm, king bed, stunning ocean panorama, private balcony.', 'Modern design, queen bed, floor-to-ceiling windows, vibrant urban energy.', 'Wooden accents, stone fireplace, mountain views, cozy ambiance.', 'Four-poster bed, private patio, candlelit intimacy, blooming garden.', 'Smart lighting, automated curtains, high-tech amenities, deluxe modern stay.', 'Vintage furnishings, bold patterns, rich colors, glamorous Art Deco.', 'Spacious layout, bunk beds, gaming console, family-friendly fun.', 'King bed, private sauna, calming colors, serene spa-inspired retreat.', 'Eclectic charm, vibrant colors, mismatched furniture, free-spirited ambiance.', 'Nautical themes, plush queen bed, beachside views, stylish comfort.'];
+let descriptionArray = ['Морской люкс с балконом и мраморной ванной.', 'Стильный скандинавский номер с видом во внутренний двор.', 'Элегантный арт-деко студио с мини-кухней и пастельными оттенками.', 'Современный бизнес-номер с рабочим уголком и ярким естественным светом.', 'Ретро люкс с мебелью 60-х годов и тематическим декором.', 'Эксклюзивный номер с панорамным видом на горы и камином.', 'Эко-дизайн с природными материалами и экологической мебелью.', 'Семейный номер с игровой зоной и раздельными спальнями.', 'Атмосферный шале с деревянной мебелью и уютным камином.', 'Минималистичный номер с современным дизайном и естественным светом.'];
 let photoArray = ['https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/duonguyen-8LrGtIxxa4w.jpg', 'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/brandon-hoogenboom-SNxQGWxZQi0.jpg', 'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg'];
 
 const createOffers = () => {
@@ -37,7 +37,7 @@ const createOffers = () => {
       lat: getRandomLocation(35.65000, 35.70000),
       lng: getRandomLocation(139.70000, 139.80000),
     },
-    price: generateRandomNumber(100, 1000000),
+    price: generateRandomNumber(0, 10000),
     type: typeArray[0],
     rooms: generateRandomNumber(1, 5),
     guests: generateRandomNumber(1, 25),
@@ -73,3 +73,5 @@ const createMainObject = () => {
 };
 
 const randomOffers = Array.from({ length: 10 }, createMainObject);
+
+export { randomOffers };
