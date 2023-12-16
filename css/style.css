@@ -247,6 +247,13 @@ fieldset {
   padding: 30px 0;
 }
 
+.notice--error {
+  background-color: red;
+  text-transform: uppercase;
+  text-align: center;
+  color: yellow;
+}
+
 .notice__title {
   margin-top: 0;
   margin-bottom: 20px;
@@ -598,6 +605,9 @@ fieldset {
 }
 
 .ad-form__photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-right: 10px;
   margin-bottom: 10px;
 

@@ -2,7 +2,6 @@ import { randomOffers } from './create-offers.js';
 
 //Rendering offers
 const cardTemplate = document.querySelector('#card').content.querySelector('.popup');
-const cardsList = document.getElementById('map-canvas');
 const cardsListFragment = document.createDocumentFragment();
 const randomCards = randomOffers;
 
@@ -49,3 +48,26 @@ randomCards.forEach((card) => {
   cardsListFragment.appendChild(cardElement);
 });
 // cardsList.appendChild(cardsListFragment);
+
+const preloadAvatar = document.getElementById('avatar');
+const downloadAvatar = document.getElementById('preload-photo');
+preloadAvatar.onchange = () => {
+  const preloadPhotoFile = preloadAvatar.files[0];
+  if (preloadPhotoFile) {
+    downloadAvatar.src = URL.createObjectURL(preloadPhotoFile);
+  }
+};
+
+const preloadHousing = document.getElementById('images');
+const mainPhotoContainer = document.querySelector('.ad-form__photo-container');
+preloadHousing.addEventListener('change', () => {
+  const preloadPhotoFile = preloadHousing.files[0];
+  if (preloadPhotoFile) {
+    const housingWrapp = document.createElement('div');
+    housingWrapp.classList.add('ad-form__photo');
+    const housingPhoto = downloadAvatar.cloneNode(true);
+    housingPhoto.src = URL.createObjectURL(preloadPhotoFile);
+    housingWrapp.appendChild(housingPhoto);
+    mainPhotoContainer.appendChild(housingWrapp);
+  }
+});
